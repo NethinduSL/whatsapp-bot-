@@ -33,7 +33,7 @@ Views: ${data.views}
         await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
 
         // download audio
-        let down = await fg.yta(data.url); // Use the video's URL for downloading
+        let down = await fg.yta(url); // Use the video's URL for downloading
         let downloadUrl = down.dl_link;
 
         // send audio
