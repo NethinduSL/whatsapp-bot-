@@ -21,11 +21,11 @@ async (conn, mek, m, {
         let desc = `
 *Elixa Song Downloader*🎵
 
-Title: ${data.title}
-Description: ${data.description}
-Duration: ${data.timestamp}
-Uploaded: ${data.ago}
-Views: ${data.views}
+🔗Title: ${data.title}
+💿Description: ${data.description}
+🕦Duration: ${data.timestamp}
+📤Uploaded: ${data.ago}
+👁️Views: ${data.views}
 
 > ®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗
 `;
@@ -71,14 +71,16 @@ async (conn, mek, m, {
         const data = search.videos[0];
         const url = data.url
 
-        let desc = `
-*Elixa Song Downloader*🎵
+        let desc = `        
+*Elixa video Downloader*🎬
 
-Title: ${data.title}
-Description: ${data.description}
-Duration: ${data.timestamp}
-Uploaded: ${data.ago}
-Views: ${data.views}
+🔗Title: ${data.title}
+💿Description: ${data.description}
+🕦Duration: ${data.timestamp}
+📤Uploaded: ${data.ago}
+👁️Views: ${data.views}
+
+
 
 > ®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗
 `;
