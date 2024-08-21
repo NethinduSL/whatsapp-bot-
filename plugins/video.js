@@ -37,7 +37,7 @@ Views: ${data.views}
         let downloadUrl = down.dl_link;
 
         // send audio
-        await conn.sendMessage(from, { audio: { url: downloadUrl }, mimetype: "audio/mpeg" }, { quoted: mek });
+        await conn.sendMessage(from,  {audio:{url: downloadUrl}, mimetype: "audio/mpeg" }, { quoted: mek });
 
     } catch (e) {
         console.log(e);
