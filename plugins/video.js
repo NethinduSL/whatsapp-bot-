@@ -16,6 +16,7 @@ async (conn, mek, m, {
         if (!q) return reply("Please provide a valid URL 🙃");
         const search = await yts(q);
         const data = search.videos[0];
+        const url = data.url
 
         let desc = `
 *Elixa Song Downloader*🎵
