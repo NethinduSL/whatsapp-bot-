@@ -16,7 +16,6 @@ const search = await yts(q)
 const data= search.videos[0];
 
 let desc =`
-let desc =`
 *Elixa Song Downloader*🎵
 
 title: ${data.title}
@@ -32,8 +31,13 @@ await conn.sendMessage(from,{image:{url:data.thumbnail},caption:desc},{quoted:me
 
 
 // download audio
-letdown = await fg.yta()
+let down = await fg.yta()
+let downloadUrl = down.dl_url
 
+//send audio
+
+
+await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{quated:mek});   
 
 
   
