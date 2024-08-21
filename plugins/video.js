@@ -34,7 +34,7 @@ Views: ${data.views}
 
         // download audio
         let down = await fg.yta(url); // Use the video's URL for downloading
-        let downloadUrl = down.dl_link;
+        let downloadUrl = down.dl_url;
 
         // send audio
         await conn.sendMessage(from,  {audio:{url: downloadUrl}, mimetype: "audio/mpeg" }, { quoted: mek });
