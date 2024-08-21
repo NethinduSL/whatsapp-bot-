@@ -19,7 +19,7 @@ const axios = require('axios')
 const { File } = require('megajs')
 const prefix = '.'
 
-const ownerNumber = ['94763936166']
+const ownerNumber = ['94766428832']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
@@ -59,7 +59,7 @@ if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
 connectToWA()
 }
 } else if (connection === 'open') {
-console.log('ðŸ˜¼ Installing... ')
+console.log('🕦 Installing... ')
 const path = require('path');
 fs.readdirSync("./plugins/").forEach((plugin) => {
 if (path.extname(plugin).toLowerCase() == ".js") {
@@ -69,9 +69,10 @@ require("./plugins/" + plugin);
 console.log('Plugins installed successful ✅')
 console.log('Elix Bot connected to whatsapp ✅')
 
-let up = `Elix-MD connected successful ✅\n\nPREFIX: ${prefix}`;
+let up = `Elix-MD connected successful ✅\n\nPREFIX: ${prefix} /n ®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗
+`;
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/900435c6d3157c98c3c88.jpg` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/b53a8448a280837695c3c.png` }, caption: up })
 
 }
 })
