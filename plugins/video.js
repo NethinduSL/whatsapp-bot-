@@ -19,15 +19,17 @@ async (conn, mek, m, {
         const url = data.url
 
         let desc = `
-*Elixa Song Downloader*🎵
+╭𝗘ꟾ𝖎✘𝗮 𝗠𝗗 𝗦𝗼𝗻𝗴 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿🎵╮
+│
+╰📌𝗧𝗶𝘁𝗹𝗲: ${data.title}
+╰🔗𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: ${data.description}
+╰🕦𝗧𝗶𝗺𝗲: ${data.timestamp}
+╰📤𝗔𝗴𝗼: ${data.ago}
+╰👁️𝗩𝗶𝗲𝘄𝘀: ${dat.views}
 
-🔗Title: ${data.title}
-💿Description: ${data.description}
-🕦Duration: ${data.timestamp}
-📤Uploaded: ${data.ago}
-👁️Views: ${data.views}
 
-> ®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗
+> 𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗༺
+
 `;
 
         await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
@@ -72,17 +74,16 @@ async (conn, mek, m, {
         const url = data.url
 
         let desc = `        
-*Elixa video Downloader*🎬
+╭𝗘ꟾ𝖎✘𝗮 𝗠𝗗 𝗩𝗶𝗱𝗲𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿🎬╮
+│
+╰📌𝗧𝗶𝘁𝗹𝗲: ${data.title}
+╰🔗𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: ${data.description}
+╰🕦𝗧𝗶𝗺𝗲: ${data.timestamp}
+╰📤𝗔𝗴𝗼: ${data.ago}
+╰👁️𝗩𝗶𝗲𝘄𝘀: ${dat.views}
 
-🔗Title: ${data.title}
-💿Description: ${data.description}
-🕦Duration: ${data.timestamp}
-📤Uploaded: ${data.ago}
-👁️Views: ${data.views}
 
-
-
-> ®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗
+> 𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗༺
 `;
 
         await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
