@@ -73,7 +73,7 @@ let up = `Elixa-MD connected successful ✅\n\nPREFIX: ${prefix}
 ®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗
 `;
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/b53a8448a280837695c3c.png` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/3ccba1e72de2ea4edee0e.png` }, caption: up })
 
 }
 })
