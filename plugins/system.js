@@ -6,7 +6,7 @@ const os = require('os');  // Fixed the typo 'requir' to 'require'
 cmd({
     pattern: "system",
     desc: "About Elixa",
-    alias: ["status", "Elixa", "botinfo"],  // Fixed 'alial' to 'alias' and added a missing double quote
+    alias: ["status", "elixa", "botinfo"],  // Fixed 'alial' to 'alias' and added a missing double quote
     category: "Download",
     filename: __filename
 }, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
@@ -14,10 +14,10 @@ cmd({
 
         let status = `
 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 :  ${runtime(process.uptime())}
-𝗥𝗮𝗺 : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(os.totalmem() / 1024 / 1024)}MB  // Used os.totalmem() instead of require('os').totalmem
+𝗥𝗮𝗺 : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(os.totalmem() / 1024 / 1024)}MB  
 𝗛𝗼𝘀𝘁 : ${os.hostname()}
 𝗖𝗿𝗲𝗮𝘁𝗼𝗿 : Nethindu Thaminda 
-𝗢𝘄𝗻𝗲𝗿 : ${config.OWNER}  // Fixed the syntax for the variable placeholder
+𝗢𝘄𝗻𝗲𝗿 : ${config.OWNER}  
 > 𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗༺
 `;
 
