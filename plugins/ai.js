@@ -4,7 +4,7 @@ const { fetchJson } = require('../lib/functions');
 
 cmd({
     pattern: "ai",
-    desc: "Check bot online or not.",
+    desc: "Chat GPT 4.",
     category: "ai",
     filename: __filename
 },
