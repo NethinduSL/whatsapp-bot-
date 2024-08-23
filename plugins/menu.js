@@ -56,7 +56,7 @@ cmd({
         `;
 
 
-await conn.sendMessage(from, {image: { url: config.ALIVE_IMG },caption: Elixamenu }, { quoted: mek });
+await conn.sendMessage(from, {image: { url: "https://telegra.ph/file/6fd1c829a29ce3a8c6679.png" },caption: Elixamenu }, { quoted: mek });
 
 
     } catch (e) {
