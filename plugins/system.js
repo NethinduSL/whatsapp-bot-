@@ -6,7 +6,7 @@ const os = require('os');  // Fixed the typo 'requir' to 'require'
 cmd({
     pattern: "system",
     desc: "About Elixa",
-    alias: ["status", "elixa", "botinfo"],  // Fixed 'alial' to 'alias' and added a missing double quote
+    alias: ["status", "elixas", "botinfo"],  // Fixed 'alial' to 'alias' and added a missing double quote
     category: "Download",
     filename: __filename
 }, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
