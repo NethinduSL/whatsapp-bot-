@@ -32,21 +32,21 @@ cmd({
 │𝗣𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝗻𝘁𝘀 ${participants}
 │𝗬𝗼𝘂𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 ${senderNumber}
 │
-╰𝗠𝗮𝗶𝗻 𝗠𝗘𝗡𝗨 ✅
-${menu.main}
-╰𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗠𝗘𝗡𝗨 ⬇️
-${menu.download}
-╰𝗚𝗿𝗼𝘂𝗽 𝗠𝗘𝗡𝗨 👥
-${menu.group}
-╰𝗔𝗶 𝗠𝗘𝗡𝗨 🦾
-${menu.ai}
-╰𝗔𝗱𝗺𝗶𝗻 𝗠𝗘𝗡𝗨 🧑‍💻
-${menu.admin}
-╰𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗘𝗡𝗨 🔎
-${menu.search}
-╰𝗖𝗼𝗻𝘃𝗲𝗿𝘁𝗲𝗿 𝗠𝗘𝗡𝗨 🧪
-${menu.converter}
-
+┝𝗠𝗮𝗶𝗻 𝗠𝗘𝗡𝗨 ✅
+│${menu.main}
+┝𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿 𝗠𝗘𝗡𝗨 ⬇️
+│${menu.download}
+┝𝗚𝗿𝗼𝘂𝗽 𝗠𝗘𝗡𝗨 👥
+│${menu.group}
+┝𝗔𝗶 𝗠𝗘𝗡𝗨 🦾
+│${menu.ai}
+┝𝗔𝗱𝗺𝗶𝗻 𝗠𝗘𝗡𝗨 🧑‍💻
+│${menu.admin}
+┝𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗘𝗡𝗨 🔎
+│${menu.search}
+┝𝗖𝗼𝗻𝘃𝗲𝗿𝘁𝗲𝗿 𝗠𝗘𝗡𝗨 🧪
+│${menu.converter}
+╰
 > 𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗༺
         `;
 
