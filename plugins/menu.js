@@ -51,7 +51,7 @@ ${menu.converter}
         `;
 
 
-await conn.sendMessage(from, { text: Elixamenu }, { quoted: mek });
+await conn.sendMessage(from, {image: { url: config.ALIVE_IMG },text: Elixamenu }, { quoted: mek });
 
 
     } catch (e) {
