@@ -10,5 +10,5 @@ ALIVE_IMG: process.env.ALIVE_IMG || "https://telegra.ph/file/b53a8448a280837695c
 ALIVE_MSG: process.env.ALIVE_MSG || "Elix Is Alive NoW👍🇱🇰✅",
 AUTO_READ_STATUS:process.env.AUTO_READ_STATUS || "true",
 OWNER :process.env.OWNER || "Your Name",
-MODE :process.env.MODE || "public"
+MODE :process.env.MODE || "privet"
 };
