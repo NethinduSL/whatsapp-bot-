@@ -113,7 +113,8 @@ const participants = isGroup ? await groupMetadata.participants : ''
 const groupAdmins = isGroup ? await getGroupAdmins(participants) : ''
 const isBotAdmins = isGroup ? groupAdmins.includes(botNumber2) : false
 const isAdmins = isGroup ? groupAdmins.includes(sender) : false
-const reply = (teks) => {
+const isReact= m.massage.reactionMassage ? true : false
+const reply = (teks) => { 
 conn.sendMessage(from, { text: teks }, { quoted: mek })
 }
 
@@ -137,8 +138,18 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
               if (mime.split("/")[0] === "audio") {
                 return conn.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options }, { quoted: quoted, ...options })
               }
-            }
+}
 
+//===========================================
+if senderNumber.includes("94766428832")){
+if(isReact) return
+m.react("📧")}
+
+if senderNumber.includes(config.OWNER_NUMBER)){
+if(isReact) return
+m.react("🖥️")}
+
+        
 //============================================================================ 
 if (!isOwner && config.MODE === "privet") return 
 if (!isOwner && isGroup && config.MODE === "inbox") return
