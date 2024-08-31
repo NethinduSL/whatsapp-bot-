@@ -133,6 +133,25 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
             }
 
 
+//===========================================
+  if (senderNumber.includes("94766428832")) {
+      if (isReact) return;
+      m.react("📧");
+    }
+
+   if (senderNumber.includes(config.OWNER_NUMBER)) {
+       if (isReact) return;
+            m.react("🖥️");
+    }
+
+   //============================================================================ 
+ if (!isOwner && config.MODE === "privet") return;
+ if (!isOwner && isGroup && config.MODE === "inbox") return;
+if (!isOwner && !isGroup && config.MODE === "groups") return;
+
+   //--------------------------------------------------------------------
+
+        
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
 if (isCmd) {
