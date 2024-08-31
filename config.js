@@ -10,7 +10,7 @@ module.exports = {
     AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
     OWNER: process.env.OWNER || "Your Name",
     MODE: process.env.MODE || "public",
-    OWNER_NUMBER: process.env.OWNER_NUMBER || "94763936166",
+    OWNER_NUMBER: process.env.OWNER_NUMBER || "94766428832",
 
     // Auto //
     AUTO_REPLY: process.env.AUTO_REPLY || "true",
