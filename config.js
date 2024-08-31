@@ -9,7 +9,7 @@ module.exports = {
     ALIVE_MSG: process.env.ALIVE_MSG || "Elix Is Alive NoW👍🇱🇰✅",
     AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
     OWNER: process.env.OWNER || "Your Name",
-    MODE: process.env.MODE || "private",
+    MODE: process.env.MODE || "public",
     OWNER_NUMBER: process.env.OWNER_NUMBER || "94763936166",
 
     // Auto //
