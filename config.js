@@ -12,7 +12,7 @@ module.exports = {
     MODE: process.env.MODE || "public",
     OWNER_NUMBER: process.env.OWNER_NUMBER || "94763936166",
 
-    // Auto //
+    //╭────────────────Auto────────────────╮//
     AUTO_REPLY: process.env.AUTO_REPLY || "true",
     AUTO_STICKER: process.env.AUTO_STICKER || "true",
     AUTO_VOICE: process.env.AUTO_VOICE || "true",
