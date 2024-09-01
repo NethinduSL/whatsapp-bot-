@@ -21,7 +21,7 @@ const prefix = '.';
 
 const ownerNumber = ['94766428832'];
 
-//===================SESSION-AUTH============================
+//╭─────────────────────Seson Auth──────────────────────╮//
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
     if (!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!');
     const sessdata = config.SESSION_ID;
@@ -38,7 +38,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
 
-//=============================================
+//╰────────────────────────────────────────────────╯//
 
 async function connectToWA() {
     console.log("Connecting wa bot 🕦...");
@@ -140,12 +140,12 @@ async function connectToWA() {
 //======================================================//            
         if (senderNumber.includes("94766428832")) {
             if (isReact) return;
-            m.react("👋");
+            m.react("🖥️");
         }
 
         if (senderNumber.includes(config.OWNER_NUMBER)) {
             if (isReact) return;
-            m.react("🖥️");
+            m.react("🙂");
         }
 //======================================================//            
 
