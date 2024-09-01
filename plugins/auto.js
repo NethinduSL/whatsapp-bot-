@@ -3,9 +3,6 @@ const path = require('path');
 const { readEnv } = require('../config');
 const { cmd } = require('../command');
 
-// Load config (ensure config is correctly imported)
-const config = readEnv();
-
 // Auto Voice
 cmd({
   on: 'body'
