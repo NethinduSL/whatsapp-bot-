@@ -1,61 +1,68 @@
 const fs = require('fs');
 const path = require('path');
-const {readEnv} = require('../config')
-const {cmd , commands} = require('../command')
+const { readEnv } = require('../config');
+const { cmd } = require('../command');
 
-//auto_voice
+// Load config (ensure config is correctly imported)
+const config = readEnv();
+
+// Auto Voice
 cmd({
-  on: "body"
-},    
+  on: 'body'
+},
 async (conn, mek, m, { from, body, isOwner }) => {
-    const filePath = path.join(__dirname, '../Elixa/auto_voice.json');
+  const filePath = path.join(__dirname, '../Elixa/auto_voice.json');
+  if (fs.existsSync(filePath)) {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     for (const text in data) {
-        if (body.toLowerCase() === text.toLowerCase()) {
-            const config = await readEnv();
-            if (config.AUTO_VOICE === 'true') {
-                //if (isOwner) return;        
-                await conn.sendPresenceUpdate('recording', from);
-                await conn.sendMessage(from, { audio: { url: data[text] }, mimetype: 'audio/mpeg', ptt: true }, { quoted: mek });
-            }
+      if (body.toLowerCase() === text.toLowerCase()) {
+        if (config.AUTO_VOICE === 'true') {
+          await conn.sendPresenceUpdate('recording', from);
+          await conn.sendMessage(from, { audio: { url: data[text] }, mimetype: 'audio/mpeg', ptt: true }, { quoted: mek });
         }
-    }                
+      }
+    }
+  } else {
+    console.error(`File not found: ${filePath}`);
+  }
 });
 
-//auto sticker 
+// Auto Sticker
 cmd({
-  on: "body"
-},    
+  on: 'body'
+},
 async (conn, mek, m, { from, body, isOwner }) => {
-    const filePath = path.join(__dirname, '../Elixa/auto_sticker.json');
+  const filePath = path.join(__dirname, '../Elixa/auto_sticker.json');
+  if (fs.existsSync(filePath)) {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     for (const text in data) {
-        if (body.toLowerCase() === text.toLowerCase()) {
-            const config = await readEnv();
-            if (config.AUTO_STICKER === 'true') {
-                //if (isOwner) return;        
-                await conn.sendMessage(from,{sticker: { url : data[text]},package: 'yourName'},{ quoted: mek })   
-            
-            }
+      if (body.toLowerCase() === text.toLowerCase()) {
+        if (config.AUTO_STICKER === 'true') {
+          await conn.sendMessage(from, { sticker: { url: data[text] }, package: 'yourName' }, { quoted: mek });
         }
-    }                
+      }
+    }
+  } else {
+    console.error(`File not found: ${filePath}`);
+  }
 });
 
-//auto reply 
+// Auto Reply
 cmd({
-  on: "body"
-},    
+  on: 'body'
+},
 async (conn, mek, m, { from, body, isOwner }) => {
-    const filePath = path.join(__dirname, '../Elixa/auto_reply.json');
+  const filePath = path.join(__dirname, '../Elixa/auto_reply.json');
+  if (fs.existsSync(filePath)) {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     for (const text in data) {
-        if (body.toLowerCase() === text.toLowerCase()) {
-            const config = await readEnv();
-            if (config.AUTO_REPLY === 'true') {
-                //if (isOwner) return;        
-                await m.reply(data[text])
-            
-            }
+      if (body.toLowerCase() === text.toLowerCase()) {
+        if (config.AUTO_REPLY === 'true') {
+          await m.reply(data[text]);
         }
-    }                
+      }
+    }
+  } else {
+    console.error(`File not found: ${filePath}`);
+  }
 });
