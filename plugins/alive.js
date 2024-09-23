@@ -2,8 +2,8 @@ const config = require('../config');
 const { cmd, commands } = require('../command');
 const { runtime } = require('../lib/functions');
 const os = require('os'); // Corrected require statement
-const { generateWAMessageFromContent, prepareWAMessageMedia } = require('@adiwajshing/baileys');
-const proto = require('@adiwajshing/baileys').proto;
+const { generateWAMessageFromContent, prepareWAMessageMedia } = require('@whiskeysockets/baileys'); // Corrected package import
+const proto = require('@whiskeysockets/baileys').proto;
 
 cmd({
     pattern: "alive",
@@ -91,4 +91,4 @@ ${config.ALIVE_MSG}
     }
 });
 
-export default cmd; // Correct export
+module.exports = cmd; // Correct export statement
