@@ -26,18 +26,19 @@ ${config.ALIVE_MSG}
 ╰───────────────────
 
 > 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘅𝗮 𝗠𝗗`;
-        
-        return await conn.sendMessage(from, {
-            image: { url: config.ALIVE_IMG },
-            caption: Alive,
 
-           ButtonReplyInfo: {
-                    displayText: string,
-                    id: strin,
-                    index: number
-        },
-            
-        }, { quoted: mek });
+        let buttonMessaged = {
+            text: Alive,
+            footer: 'UPDATER',
+            headerType: 4
+        };
+        
+        // Send the alive message with image
+        await conn.sendMessage(from, { image: { url: config.ALIVE_IMG }, caption: Alive }, { quoted: mek });
+        
+        // Optional: If you want to send the button message as well
+        await conn.sendMessage(from, buttonMessaged, { quoted: mek });
+
     } catch (e) {
         console.log(e);
         reply(`${e}`);
