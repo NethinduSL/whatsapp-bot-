@@ -25,14 +25,17 @@ ${config.ALIVE_MSG}
 
 > 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘅𝗮 𝗠𝗗`;
 
-        // Sending the message with a button reply
+        // Sending the message with one button using Baileys
         return await conn.sendMessage(from, {
             text: Alive,
             buttons: [
-                {buttonId: 'id1', buttonText: {displayText: 'Status'}, type: 1},
-                {buttonId: 'id2', buttonText: {displayText: 'Help'}, type: 1}
+                {
+                    buttonId: 'alive-status',
+                    buttonText: { displayText: 'Status' },
+                    type: 1
+                }
             ],
-            headerType: 1
+            headerType: 1 // Header type for text
         }, { quoted: mek });
     } catch (e) {
         console.error(e);
