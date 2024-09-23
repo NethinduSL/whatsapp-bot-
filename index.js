@@ -184,7 +184,7 @@ async function connectToWA() {
     });
 }
 
-app.get("/", (req, res) => res.sendFile(require('path').join(__dirname, "../index.html")));
+app.get("/", (req, res) => res.sendFile(require('path').join(__dirname, "index.html")));
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
 connectToWA()
