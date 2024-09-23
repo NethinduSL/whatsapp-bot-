@@ -184,12 +184,8 @@ async function connectToWA() {
     });
 }
 
-app.get("/", (req, res) => {
-    res.send("Hey, bot started ✅");
-});
-
+app.get("/", (req, res) => res.sendFile(require('path').join(__dirname, "../index.html")));
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
-
 setTimeout(() => {
-    connectToWA();
-}, 4000);
+connectToWA()
+}, 4000);  
