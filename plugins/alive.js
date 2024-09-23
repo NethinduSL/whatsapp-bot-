@@ -27,17 +27,21 @@ ${config.ALIVE_MSG}
 
 > 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘅𝗮 𝗠𝗗`;
 
-        let buttonMessaged = {
-            text: Alive,
-            footer: 'UPDATER',
-            headerType: 4
-        };
-        
         // Send the alive message with image
         await conn.sendMessage(from, { image: { url: config.ALIVE_IMG }, caption: Alive }, { quoted: mek });
-        
-        // Optional: If you want to send the button message as well
-        await conn.sendMessage(from, buttonMessaged, { quoted: mek });
+
+        // Button message with a Ping button
+        let buttonMessage = {
+            text: Alive,
+            footer: 'UPDATER',
+            buttons: [
+                { buttonId: '.ping', buttonText: { displayText: 'Ping' }, type: 1 }
+            ],
+            headerType: 1 // Required for text messages with buttons
+        };
+
+        // Send the button message
+        await conn.sendMessage(from, buttonMessage, { quoted: mek });
 
     } catch (e) {
         console.log(e);
