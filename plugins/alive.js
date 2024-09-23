@@ -26,13 +26,72 @@ ${config.ALIVE_MSG}
 ╰───────────────────
 
 > 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘅𝗮 𝗠𝗗`;
-        
-        return await conn.sendMessage(from, {
-            image: { url: config.ALIVE_IMG },
-            caption: Alive
-        }, { quoted: mek });
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
+
+
+    const buttons = [
+      {
+        "name": "quick_reply",
+        "buttonParamsJson": JSON.stringify({
+          display_text: "MENU",
+          id: `${prefix}menu`
+        })
+      },
+      {
+        "name": "quick_reply",
+        "buttonParamsJson": JSON.stringify({
+          display_text: "PING",
+          id: `${prefix}ping`
+        })
+      }
+    ];
+
+
+
+const msg = generateWAMessageFromContent(m.from, {
+      viewOnceMessage: {
+        message: {
+          messageContextInfo: {
+            deviceListMetadata: {},
+            deviceListMetadataVersion: 2
+          },
+          interactiveMessage: proto.Message.InteractiveMessage.create({
+            body: proto.Message.InteractiveMessage.Body.create({
+              text: Alive
+            }),
+            footer: proto.Message.InteractiveMessage.Footer.create({
+              text: "© ᴘᴏᴡᴇʀᴅ ʙʏ ᴇᴛʜɪx-ᴍᴅ"
+            }),
+            header: proto.Message.InteractiveMessage.Header.create({
+              ...(await prepareWAMessageMedia({ image: buffer }, { upload: Matrix.waUploadToServer })),
+              title: ``,
+              gifPlayback: false,
+              subtitle: "",
+              hasMediaAttachment: false
+            }),
+            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+              buttons
+            }),
+            contextInfo: {
+              quotedMessage: m.message,
+              forwardingScore: 999,
+              isForwarded: true,
+              forwardedNewsletterMessageInfo: {
+                newsletterJid: '120363249960769123@newsletter',
+                newsletterName: "Ethix-MD",
+                serverMessageId: 143
+              }
+            }
+          }),
+        },
+      },
+    }, {});
+
+
+
+await Alive.relayMessage(msg.key.remoteJid, msg.message, {
+      messageId: msg.key.id
+    });
+  }
+};
+
+export default alive;
