@@ -1,7 +1,7 @@
 const config = require('../config');
 const { cmd, commands } = require('../command');
 const { runtime } = require('../lib/functions');
-const os = require('os'); // Corrected require statement
+const os = require('os');
 
 cmd({
     pattern: "alive",
@@ -15,7 +15,7 @@ async (conn, mek, m, {
     participants, groupAdmins, isBotAdmins, isAdmins, reply
 }) => {
     try {
-        const Alive = `
+        const aliveMessage = `
 ${config.ALIVE_MSG}
 ╭
 │𝗥𝘂𝗻𝘁𝗶𝗺𝗲: ${runtime(process.uptime())}
@@ -25,17 +25,17 @@ ${config.ALIVE_MSG}
 │𝗢𝘄𝗻𝗲𝗿: ${config.OWNER}
 ╰───────────────────
 
-> 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘅𝗮 𝗠𝗗`;
+> 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘇𝗮 𝗠𝗗`;
 
         // Send the alive message with image
-        await conn.sendMessage(from, { image: { url: config.ALIVE_IMG }, caption: Alive }, { quoted: mek });
+        await conn.sendMessage(from, { image: { url: config.ALIVE_IMG }, caption: aliveMessage }, { quoted: mek });
 
         // Button message with a Ping button
-        let buttonMessage = {
-            text: Alive,
+        const buttonMessage = {
+            text: aliveMessage,
             footer: 'UPDATER',
             buttons: [
-                { buttonId: '.ping', buttonText: { displayText: 'Ping' }, type: 1 }
+                { buttonId: '.ping', buttonText: { displayText: '𝗽𝗶𝗻𝗴' }, type: 1 }
             ],
             headerType: 1 // Required for text messages with buttons
         };
