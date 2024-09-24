@@ -1,7 +1,7 @@
 const config = require('../config');
-const { cmd, commands } = require('../command');
+const { cmd } = require('../command');
 const { runtime } = require('../lib/functions');
-const os = require('os'); // Corrected require statement
+const os = require('os');
 
 cmd({
     pattern: "alive",
@@ -10,9 +10,7 @@ cmd({
     filename: __filename
 },
 async (conn, mek, m, {
-    from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, 
-    botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, 
-    participants, groupAdmins, isBotAdmins, isAdmins, reply
+    from, quoted, isCmd, command, sender, groupName, reply
 }) => {
     try {
         const Alive = `
@@ -26,23 +24,21 @@ ${config.ALIVE_MSG}
 ╰───────────────────
 
 > 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘅𝗮 𝗠𝗗`;
-        
-        return await conn.sendMessage(from, {
+
+        await conn.sendMessage(from, {
             image: { url: config.ALIVE_IMG },
             caption: Alive
         }, { quoted: mek });
 
-const reactionMessage = {
-    react: {
-        text: "🖥️", // use an empty string to remove the reaction
-        key: message.key
-    }
-}
+        const reactionMessage = {
+            react: {
+                text: "🖥️", // Reaction emoji
+                key: mek.key // Corrected variable for message key
+            }
+        };
 
+        await conn.sendMessage(from, reactionMessage); // Send the reaction
 
-
-
-        
     } catch (e) {
         console.log(e);
         reply(`${e}`);
