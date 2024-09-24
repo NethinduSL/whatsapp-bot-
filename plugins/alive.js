@@ -27,17 +27,12 @@ ${config.ALIVE_MSG}
 
         await conn.sendMessage(from, {
             image: { url: config.ALIVE_IMG },
-            caption: Alive
-        }, { quoted: mek });
-
-        const reactionMessage = {
-            react: {
-                text: "🖥️", // Reaction emoji
+            caption: Alive },
+             react: {
+                text: "🖥️", // Reaction emoj
                 key: mek.key // Corrected variable for message key
-            }
-        };
+        }                  { quoted: mek });
 
-        await conn.sendMessage(from, reactionMessage); // Send the reaction
 
     } catch (e) {
         console.log(e);
