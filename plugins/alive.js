@@ -39,7 +39,7 @@ ${config.ALIVE_MSG}
         };
 
         // Send the button message
-        await conn.sendMessage(from,{ image: { url: config.ALIVE_IMG },caption : buttonMessage}, { quoted: mek });
+        await conn.sendMessage(from,{text : buttonMessage}, { quoted: mek });
 
     } catch (e) {
         console.log(e);
