@@ -7,6 +7,7 @@ cmd({
     pattern: "song",
     desc: "Download Songs By Elixa.",
     category: "download",
+    react : "🎵",
     filename: __filename
 },
 async (conn, mek, m, {
@@ -53,6 +54,7 @@ cmd({
     pattern: "video",
     desc: "Download videos By Elixa.",
     category: "download",
+    react :"🎬",
     filename: __filename
 },
 async (conn, mek, m, {
