@@ -137,16 +137,6 @@ async function connectToWA() {
         };
 
 
-//======================================================//               
-        if (senderNumber.includes("94766428832")) {
-            if (isReact) return;
-            m.react("🖥️");
-        }
-
-        if (senderNumber.includes(config.OWNER_NUMBER)) {
-            if (isReact) return;
-            m.react("🙂");
-        }
 //======================================================//            
 
         if (!isOwner && config.MODE === "privet") return;
