@@ -1,5 +1,5 @@
 const config = require('../config');
-const { cmd, commands } = require('../command');
+const { cmd } = require('../command');
 const { runtime } = require('../lib/functions');
 const os = require('os');
 
@@ -27,10 +27,17 @@ ${config.ALIVE_MSG}
 
 > 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘇𝗮 𝗠𝗗`;
 
-        
+        // Send the image first
+        await conn.sendMessage(from, {
+            image: { url: config.ALIVE_IMG },
+            caption: aliveMessage,
+            footer: 'UPDATER',
+            headerType: 1 // Required for text messages with buttons
+        }, { quoted: mek });
+
         // Button message with a Ping button
         const buttonMessage = {
-            text: aliveMessage,
+            text: 'Click the button below:',
             footer: 'UPDATER',
             templateButtons: [
                 { index: 1, quickReplyButton: { displayText: '𝗽𝗶𝗻𝗴', id: '.ping' } }
@@ -39,7 +46,7 @@ ${config.ALIVE_MSG}
         };
 
         // Send the button message
-        await conn.sendMessage(from,{ image: { url: config.ALIVE_IMG },caption : buttonMessage}, { quoted: mek });
+        await conn.sendMessage(from, buttonMessage, { quoted: mek });
 
     } catch (e) {
         console.log(e);
