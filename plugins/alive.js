@@ -31,6 +31,18 @@ ${config.ALIVE_MSG}
             image: { url: config.ALIVE_IMG },
             caption: Alive
         }, { quoted: mek });
+
+const reactionMessage = {
+    react: {
+        text: "🖥️", // use an empty string to remove the reaction
+        key: message.key
+    }
+}
+
+
+
+
+        
     } catch (e) {
         console.log(e);
         reply(`${e}`);
