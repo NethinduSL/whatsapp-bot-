@@ -27,12 +27,15 @@ ${config.ALIVE_MSG}
 
 > 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘇𝗮 𝗠𝗗`;
 
+        // Send the alive message with image
+        await conn.sendMessage(from, { image: { url: config.ALIVE_IMG }, caption: aliveMessage }, { quoted: mek });
+
         // Button message with a Ping button
         const buttonMessage = {
             text: aliveMessage,
             footer: 'UPDATER',
-            buttons: [
-                { buttonId: '.ping', buttonText: { displayText: '𝗽𝗶𝗻𝗴' }, type: 1 }
+            templateButtons: [
+                { index: 1, quickReplyButton: { displayText: '𝗽𝗶𝗻𝗴', id: '.ping' } }
             ],
             headerType: 1 // Required for text messages with buttons
         };
