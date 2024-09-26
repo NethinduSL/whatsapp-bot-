@@ -4,7 +4,6 @@ const { fetchJson } = require('../lib/functions');
 const { runtime } = require('../lib/functions');
 const moment = require('moment-timezone');
 const axios = require('axios');
-const fetch = require('node-fetch');
 
 // -----------------------------------------------------------------------------
 cmd({
