@@ -1,5 +1,6 @@
 const config = require('../config');
 const { cmd, commands } = require('../command');
+const { fetchJson } = require('../lib/functions');
 const { runtime } = require('../lib/functions');
 const moment = require('moment-timezone')
 let gis = require("g-i-s");
@@ -12,6 +13,7 @@ cmd({
             category: "search",
             desc: "Sends image of asked Movie/Series.",
             use: '<text>',
+            react:"🎞️",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -54,6 +56,7 @@ cmd({
             category: "search",
             desc: "Sends weather info about asked place.",
             use: '<location>',
+    react:"🌧️",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -90,6 +93,7 @@ cmd({
             category: "search",
             desc: "Gives horoscope info of user.",
             use: '<sign>\n:Example: horo libra',
+    react:"😌",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -126,6 +130,7 @@ cmd({
             pattern: "google",
             category: "search",
             desc: "Sends info of given query from Google Search.",
+    react:"🔎",
             use: '<text>',
             filename: __filename,
         },
@@ -147,7 +152,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "couplepp",
-            category: "search",
+            category: "admin",
             desc: "Sends two couples pics.",
             filename: __filename,
         },
