@@ -5,7 +5,7 @@ const { runtime } = require('../lib/functions');
 cmd({
     pattern: "ping",
     desc: "To check ping",
-    category: "general",
+    category: "main",
     filename: __filename,
 }, 
 async (Void, citel) => {
