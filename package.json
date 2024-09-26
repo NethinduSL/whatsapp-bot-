@@ -25,8 +25,6 @@
     "qrcode-terminal": "^0.12.0",
     "yt-search": "2.12.0",
     "api-dylux": "1.8.5",
-    "moment-timezone":"0.5.45",
-
-
+    "moment-timezone":"0.5.45"
   }
 }
