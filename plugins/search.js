@@ -7,6 +7,7 @@ cmd({
     category: "search",
     desc: "Sends image of asked Movie/Series.",
     use: '<movie_name>',
+    react :"🎞️",
     filename: __filename,
 },
     async (conn, mek, m, {
