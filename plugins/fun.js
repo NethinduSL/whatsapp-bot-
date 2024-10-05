@@ -7,6 +7,7 @@ cmd({
         pattern: "fact",
         desc: "Sends a fact in chat.",
         category: "fun",
+        react :"🔮",
         filename: __filename,
     },
     async (conn, mek, m, {
