@@ -17,7 +17,6 @@ Elixa MD is a powerful, customizable, and easy-to-use WhatsApp bot built using *
 - 📤 **Message Automation**: Send and receive automated responses.
 - 📊 **Interactive Commands**: Execute commands like fetching data, generating QR codes, and more.
 - 📂 **File Management**: Upload, download, and share files.
-- 🛠️ **Customizable**: Add or modify commands to suit your needs.
 - 🔒 **Secure**: Ensures end-to-end encryption for WhatsApp interactions.
 
 ---
@@ -31,7 +30,7 @@ Before you begin, ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (v14 or later)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - WhatsApp account (linked to the bot)
-
+---
 ### Installation
 
 1. **Clone the Repository**:
@@ -61,7 +60,6 @@ Before you begin, ensure you have the following installed:
    npm start
    ```
 
----
 
 ## 🔧 Usage
 
