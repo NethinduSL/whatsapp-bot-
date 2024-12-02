@@ -1,96 +1,13 @@
-const config = require('../config');
-const { cmd, commands } = require('../command');
-const fg = require('api-dylux');
-const yts = require('yt-search');
-
-cmd({
-    pattern: "song",
-    desc: "Download Songs By Elixa.",
-    category: "download",
-    react : "🎵",
-    filename: __filename
-},
-async (conn, mek, m, {
-    from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
-}) => {
-    try {
-        if (!q) return reply("Please provide a valid URL 🙃");
-        const search = await yts(q);
-        const data = search.videos[0];
-        const url = data.url;
-
-        let desc = `
-╭𝗘ꟾ𝖎✘𝗮 𝗠𝗗 𝗦𝗼𝗻𝗴 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿🎵╮
-│
-╰📌𝗧𝗶𝘁𝗹𝗲: ${data.title}
-╰🔗𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: ${data.description}
-╰🕦𝗧𝗶𝗺𝗲: ${data.timestamp}
-╰📤𝗔𝗴𝗼: ${data.ago}
-╰👁️𝗩𝗶𝗲𝘄𝘀: ${data.views}
+//මේක බලල වැඩක් නෑ obsufucate  කරල තියෙනේ .
 
 
-> 𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗༺
-`;
+//  ________  __    _                   ____    ____  ______   
+// |_   __  |[  |  (_)                 |_   \  /   _||_   _ `. 
+//   | |_ \_| | |  __   _   __  ,--.     |   \/   |    | | `. \
+//   |  _| _  | | [  | [ \ [  ]` _\ :    | |\  /| |    | |  | |
+//  _| |__/ | | |  | |  >    < // | |,  _| |_\/_| |_  _| |_.  /
+// |________|[___][___][__]`\_]\ -;__/ |_____||_____||______.  
+//All right resevd 🇱🇰
+//❤️ for al users
 
-        await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
-
-        // download audio
-        let down = await fg.yta(url); // Use the video's URL for downloading
-        let downloadUrl = down.dl_url;
-
-        // send audio
-        await conn.sendMessage(from, { audio: { url: downloadUrl }, mimetype: "audio/mpeg" }, { quoted: mek });
-        await conn.sendMessage(from, { document: { url: downloadUrl }, mimetype: "audio/mp3", fileName: data.title + ".mp3", caption: "®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗" }, { quoted: mek });
-
-    } catch (e) {
-        console.log(e);
-        reply(`Error: ${e}`);
-    }
-});
-
-//---------------------------video--------------------------
-
-cmd({
-    pattern: "video",
-    desc: "Download videos By Elixa.",
-    category: "download",
-    react :"🎬",
-    filename: __filename
-},
-async (conn, mek, m, {
-    from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
-}) => {
-    try {
-        if (!q) return reply("Please provide a valid URL 🙃");
-        const search = await yts(q);
-        const data = search.videos[0];
-        const url = data.url;
-
-        let desc = `        
-╭𝗘ꟾ𝖎✘𝗮 𝗠𝗗 𝗩𝗶𝗱𝗲𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿🎬╮
-│
-╰📌𝗧𝗶𝘁𝗹𝗲: ${data.title}
-╰🔗𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: ${data.description}
-╰🕦𝗧𝗶𝗺𝗲: ${data.timestamp}
-╰📤𝗔𝗴𝗼: ${data.ago}
-╰👁️𝗩𝗶𝗲𝘄𝘀: ${data.views}
-
-
-> 𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗༺
-`;
-
-        await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
-
-        // download video
-        let down = await fg.ytv(url); // Use the video's URL for downloading
-        let downloadUrl = down.dl_url;
-
-        // send video
-        await conn.sendMessage(from, { video: { url: downloadUrl }, mimetype: "video/mp4" }, { quoted: mek });
-        await conn.sendMessage(from, { document: { url: downloadUrl }, mimetype: "video/mp4", fileName: data.title + ".mp4", caption: "®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙 𝝗𝞤 𝗘ꟾ𝖎✘𝗮 ‐𝝡𝗗" }, { quoted: mek });
-
-    } catch (e) {
-        console.log(e);
-        reply(`Error: ${e}`);
-    }
-});
+const _0x5491c7=_0x12c8;function _0x12c8(_0x460dc0,_0x2dc1ba){const _0xe6cceb=_0xe6cc();return _0x12c8=function(_0x12c809,_0x2636c8){_0x12c809=_0x12c809-0x168;let _0x7f0301=_0xe6cceb[_0x12c809];return _0x7f0301;},_0x12c8(_0x460dc0,_0x2dc1ba);}(function(_0x5b6415,_0x1bf56a){const _0x4e2e8c=_0x12c8,_0x4e5256=_0x5b6415();while(!![]){try{const _0x40c689=parseInt(_0x4e2e8c(0x187))/0x1*(parseInt(_0x4e2e8c(0x17f))/0x2)+parseInt(_0x4e2e8c(0x16b))/0x3*(-parseInt(_0x4e2e8c(0x181))/0x4)+-parseInt(_0x4e2e8c(0x16d))/0x5*(parseInt(_0x4e2e8c(0x16a))/0x6)+parseInt(_0x4e2e8c(0x18d))/0x7*(-parseInt(_0x4e2e8c(0x188))/0x8)+-parseInt(_0x4e2e8c(0x184))/0x9+parseInt(_0x4e2e8c(0x18f))/0xa+parseInt(_0x4e2e8c(0x18c))/0xb;if(_0x40c689===_0x1bf56a)break;else _0x4e5256['push'](_0x4e5256['shift']());}catch(_0x386f46){_0x4e5256['push'](_0x4e5256['shift']());}}}(_0xe6cc,0xe3353));function _0xe6cc(){const _0xf0161b=['video/mp4','537520EYfvNo','download','®𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙\x20𝝗𝞤\x20𝗘ꟾ𝖎✘𝗮\x20‐𝝡𝗗','17814vLThNt','873138UNEVyu','yta','1555gbBdIr','sendMessage','yt-search','\x0a\x0a╭𝗘ꟾ𝖎✘𝗮\x20𝗠𝗗\x20𝗦𝗼𝗻𝗴\x20𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿🎵╮\x0a\x0a│\x0a\x0a╰📌𝗧𝗶𝘁𝗹𝗲:\x20','views','title','Error:\x20','ago','dl_url','api-dylux','description','song','\x0a\x0a╰👁️𝗩𝗶𝗲𝘄𝘀:\x20','timestamp','videos','thumbnail','log','ytv','630tAESnz','.mp3','12bfuEuI','audio/mp3','\x0a\x0a╰🕦𝗧𝗶𝗺𝗲:\x20','1341891CIxtzC','Please\x20provide\x20a\x20valid\x20URL\x20🙃','\x0a\x0a╰📤𝗔𝗴𝗼:\x20','5715eHrEmo','88qXtAkS','../command','\x0a\x0a>\x20𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙\x20𝝗𝞤\x20𝗘ꟾ𝖎✘𝗮\x20‐𝝡𝗗༺\x0a\x0a','\x0a\x0a╰🔗𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻:\x20','14546851urgRXN','191023KlhcJi'];_0xe6cc=function(){return _0xf0161b;};return _0xe6cc();}const config=require('../config'),{cmd,commands}=require(_0x5491c7(0x189)),fg=require(_0x5491c7(0x176)),yts=require(_0x5491c7(0x16f));cmd({'pattern':_0x5491c7(0x178),'desc':'Download\x20Songs\x20By\x20Elixa.','category':_0x5491c7(0x168),'react':'🎵','filename':__filename},async(_0x25d1e7,_0x4facd0,_0x57afdc,{from:_0x2eab8b,quoted:_0x1a2957,body:_0x21bc36,isCmd:_0x3f35b8,command:_0x28d962,args:_0x49b9fd,q:_0x41a51d,isGroup:_0x24953f,sender:_0x376a7b,senderNumber:_0x1129d6,botNumber2:_0x5493f3,botNumber:_0x4a3434,pushname:_0x2cd1bf,isMe:_0x39a6c4,isOwner:_0x15176d,groupMetadata:_0x301859,groupName:_0x5d8633,participants:_0x14716e,groupAdmins:_0x47455e,isBotAdmins:_0x136201,isAdmins:_0x10437a,reply:_0x3d770a})=>{const _0xa23a6c=_0x5491c7;try{if(!_0x41a51d)return _0x3d770a('Please\x20provide\x20a\x20valid\x20URL\x20🙃');const _0x4af5c6=await yts(_0x41a51d),_0x39cf39=_0x4af5c6[_0xa23a6c(0x17b)][0x0],_0x4c4248=_0x39cf39['url'];let _0x48fcd5=_0xa23a6c(0x170)+_0x39cf39['title']+'\x0a\x0a╰🔗𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻:\x20'+_0x39cf39['description']+_0xa23a6c(0x183)+_0x39cf39[_0xa23a6c(0x17a)]+'\x0a\x0a╰📤𝗔𝗴𝗼:\x20'+_0x39cf39[_0xa23a6c(0x174)]+_0xa23a6c(0x179)+_0x39cf39[_0xa23a6c(0x171)]+'\x0a\x0a>\x20𝗚𝗲𝟆𝗮𝗿𝗮𝐭𝗲𝙙\x20𝝗𝞤\x20𝗘ꟾ𝖎✘𝗮\x20‐𝝡𝗗༺\x0a\x0a';await _0x25d1e7[_0xa23a6c(0x16e)](_0x2eab8b,{'image':{'url':_0x39cf39[_0xa23a6c(0x17c)]},'caption':_0x48fcd5},{'quoted':_0x4facd0});let _0x42ece4=await fg[_0xa23a6c(0x16c)](_0x4c4248),_0x3da8a0=_0x42ece4['dl_url'];await _0x25d1e7[_0xa23a6c(0x16e)](_0x2eab8b,{'audio':{'url':_0x3da8a0},'mimetype':'audio/mpeg'},{'quoted':_0x4facd0}),await _0x25d1e7[_0xa23a6c(0x16e)](_0x2eab8b,{'document':{'url':_0x3da8a0},'mimetype':_0xa23a6c(0x182),'fileName':_0x39cf39['title']+_0xa23a6c(0x180),'caption':_0xa23a6c(0x169)},{'quoted':_0x4facd0});}catch(_0x273bde){console[_0xa23a6c(0x17d)](_0x273bde),_0x3d770a(_0xa23a6c(0x173)+_0x273bde);}}),cmd({'pattern':'video','desc':'Download\x20videos\x20By\x20Elixa.','category':_0x5491c7(0x168),'react':'🎬','filename':__filename},async(_0x497f86,_0x420a85,_0xe50b31,{from:_0x438bb4,quoted:_0x1e0ead,body:_0x51bb57,isCmd:_0x5e3f3f,command:_0x2bb643,args:_0x3ecdec,q:_0x1e4919,isGroup:_0x499ce0,sender:_0x308718,senderNumber:_0x19a338,botNumber2:_0x41926b,botNumber:_0x5e7bc6,pushname:_0x429266,isMe:_0x4c552d,isOwner:_0x166c61,groupMetadata:_0x2dcdc6,groupName:_0x4d5018,participants:_0x1af292,groupAdmins:_0x33b608,isBotAdmins:_0x3f75fd,isAdmins:_0x4e353f,reply:_0x54d108})=>{const _0x17815b=_0x5491c7;try{if(!_0x1e4919)return _0x54d108(_0x17815b(0x185));const _0x252e17=await yts(_0x1e4919),_0x457536=_0x252e17[_0x17815b(0x17b)][0x0],_0x566ba5=_0x457536['url'];let _0x3d750a='\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x0a╭𝗘ꟾ𝖎✘𝗮\x20𝗠𝗗\x20𝗩𝗶𝗱𝗲𝗼\x20𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿🎬╮\x0a\x0a│\x0a\x0a╰📌𝗧𝗶𝘁𝗹𝗲:\x20'+_0x457536[_0x17815b(0x172)]+_0x17815b(0x18b)+_0x457536[_0x17815b(0x177)]+_0x17815b(0x183)+_0x457536[_0x17815b(0x17a)]+_0x17815b(0x186)+_0x457536[_0x17815b(0x174)]+'\x0a\x0a╰👁️𝗩𝗶𝗲𝘄𝘀:\x20'+_0x457536[_0x17815b(0x171)]+_0x17815b(0x18a);await _0x497f86['sendMessage'](_0x438bb4,{'image':{'url':_0x457536['thumbnail']},'caption':_0x3d750a},{'quoted':_0x420a85});let _0x354759=await fg[_0x17815b(0x17e)](_0x566ba5),_0x1983ef=_0x354759[_0x17815b(0x175)];await _0x497f86[_0x17815b(0x16e)](_0x438bb4,{'video':{'url':_0x1983ef},'mimetype':'video/mp4'},{'quoted':_0x420a85}),await _0x497f86[_0x17815b(0x16e)](_0x438bb4,{'document':{'url':_0x1983ef},'mimetype':_0x17815b(0x18e),'fileName':_0x457536['title']+'.mp4','caption':_0x17815b(0x169)},{'quoted':_0x420a85});}catch(_0x4cd040){console[_0x17815b(0x17d)](_0x4cd040),_0x54d108('Error:\x20'+_0x4cd040);}});
