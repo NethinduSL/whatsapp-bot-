@@ -1,46 +1,14 @@
-const config = require('../config');
-const { cmd, commands } = require('../command');
-const { runtime } = require('../lib/functions');
-const os = require('os'); // Corrected require statement
+//මේක බලල වැඩක් නෑ obsufucate  කරල තියෙනේ .
 
-cmd({
-    pattern: "alive",
-    desc: "Check if the bot is online.",
-    category: "main",
-    react : "🖥️",
-    filename: __filename
-},
-async (conn, mek, m, {
-    from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, 
-    botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, 
-    participants, groupAdmins, isBotAdmins, isAdmins, reply
-}) => {
-    try {
-        const Alive = `
-${config.ALIVE_MSG}
-╭
-│𝗥𝘂𝗻𝘁𝗶𝗺𝗲: ${runtime(process.uptime())}
-│𝗥𝗮𝗺: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB / ${Math.round(os.totalmem() / 1024 / 1024)} MB
-│𝗛𝗼𝘀𝘁: ${os.hostname()}
-│𝗖𝗿𝗲𝗮𝘁𝗼𝗿: Nethindu Thaminda
-│𝗢𝘄𝗻𝗲𝗿: ${config.OWNER}
-╰───────────────────
 
-> 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝘅𝗮 𝗠𝗗`;
+//  ________  __    _                   ____    ____  ______   
+// |_   __  |[  |  (_)                 |_   \  /   _||_   _ `. 
+//   | |_ \_| | |  __   _   __  ,--.     |   \/   |    | | `. \
+//   |  _| _  | | [  | [ \ [  ]`'_\ :    | |\  /| |    | |  | |
+//  _| |__/ | | |  | |  > '  < // | |,  _| |_\/_| |_  _| |_.' /
+// |________|[___][___][__]`\_]\'-;__/ |_____||_____||______.' 
+//All right resevd 🇱🇰
+//❤️ for al users
 
-        // Send the message
-        const sentMsg = await conn.sendMessage(from, {
-            image: { url: config.ALIVE_IMG },
-            caption: Alive
-        }, { quoted: mek });
 
-        // Apply the reaction to the sent message
-        await conn.sendMessage(from, {
-            react: { text: '❤️', key: sentMsg.key } // React to the message just sent
-        });
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
+function _0x5f10(){const _0x1857ef=['hostname','8103108VddaUX','OWNER','sendMessage','225220DqVtMt','2233269LYJHEz','../lib/functions','🖥️','round','memoryUsage','main','\x20MB\x0a\x0a│𝗛𝗼𝘀𝘁:\x20','4913025cPeqUp','alive','1dKWjUd','uptime','\x0a\x0a╰───────────────────\x0a\x0a>\x20𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱\x20𝗯𝘆\x20𝗘𝗹𝗶𝘅𝗮\x20𝗠𝗗','23241AnRtFd','649ePsJTK','484GruwtK','957838YIDFsj','ALIVE_IMG','18712DgqOMw','2891lqrGjT','totalmem','../config','\x20MB\x20/\x20','log','Check\x20if\x20the\x20bot\x20is\x20online.','\x0a\x0a│𝗖𝗿𝗲𝗮𝘁𝗼𝗿:\x20Nethindu\x20Thaminda\x0a\x0a│𝗢𝘄𝗻𝗲𝗿:\x20','toFixed'];_0x5f10=function(){return _0x1857ef;};return _0x5f10();}function _0x5d3c(_0x25a451,_0x447db1){const _0x5f1001=_0x5f10();return _0x5d3c=function(_0x5d3cf3,_0x505b63){_0x5d3cf3=_0x5d3cf3-0x93;let _0x3ed1a2=_0x5f1001[_0x5d3cf3];return _0x3ed1a2;},_0x5d3c(_0x25a451,_0x447db1);}const _0x274a81=_0x5d3c;(function(_0x17868e,_0x24773b){const _0x4565d5=_0x5d3c,_0x385702=_0x17868e();while(!![]){try{const _0x27ff2b=-parseInt(_0x4565d5(0xa3))/0x1*(parseInt(_0x4565d5(0xa9))/0x2)+parseInt(_0x4565d5(0xa6))/0x3*(parseInt(_0x4565d5(0xa8))/0x4)+parseInt(_0x4565d5(0xa1))/0x5+parseInt(_0x4565d5(0x96))/0x6+-parseInt(_0x4565d5(0xac))/0x7*(parseInt(_0x4565d5(0xab))/0x8)+parseInt(_0x4565d5(0x9a))/0x9+parseInt(_0x4565d5(0x99))/0xa*(-parseInt(_0x4565d5(0xa7))/0xb);if(_0x27ff2b===_0x24773b)break;else _0x385702['push'](_0x385702['shift']());}catch(_0x1259f2){_0x385702['push'](_0x385702['shift']());}}}(_0x5f10,0xb5ddf));const config=require(_0x274a81(0xae)),{cmd,commands}=require('../command'),{runtime}=require(_0x274a81(0x9b)),os=require('os');cmd({'pattern':_0x274a81(0xa2),'desc':_0x274a81(0xb1),'category':_0x274a81(0x9f),'react':_0x274a81(0x9c),'filename':__filename},async(_0x5c8b39,_0x1c90a6,_0x162979,{from:_0x3a1715,quoted:_0x419b7c,body:_0x3d3948,isCmd:_0x3ce4cd,command:_0x51536b,args:_0x458fcb,q:_0x22c9a8,isGroup:_0x582bb0,sender:_0x214932,senderNumber:_0xfa5f73,botNumber2:_0x20012e,botNumber:_0x6fc41e,pushname:_0x3559a7,isMe:_0x1ffe1a,isOwner:_0x44f4e9,groupMetadata:_0x525c78,groupName:_0x40267f,participants:_0x123e81,groupAdmins:_0x7aabdf,isBotAdmins:_0x2a16a7,isAdmins:_0x16b2c6,reply:_0xbb7a34})=>{const _0x59b44e=_0x274a81;try{const _0x5c787a='\x0a\x0a'+config['ALIVE_MSG']+'\x0a\x0a╭\x0a\x0a│𝗥𝘂𝗻𝘁𝗶𝗺𝗲:\x20'+runtime(process[_0x59b44e(0xa4)]())+'\x0a\x0a│𝗥𝗮𝗺:\x20'+(process[_0x59b44e(0x9e)]()['heapUsed']/0x400/0x400)[_0x59b44e(0x94)](0x2)+_0x59b44e(0xaf)+Math[_0x59b44e(0x9d)](os[_0x59b44e(0xad)]()/0x400/0x400)+_0x59b44e(0xa0)+os[_0x59b44e(0x95)]()+_0x59b44e(0x93)+config[_0x59b44e(0x97)]+_0x59b44e(0xa5),_0xaa9dfa=await _0x5c8b39[_0x59b44e(0x98)](_0x3a1715,{'image':{'url':config[_0x59b44e(0xaa)]},'caption':_0x5c787a},{'quoted':_0x1c90a6});await _0x5c8b39['sendMessage'](_0x3a1715,{'react':{'text':'❤️','key':_0xaa9dfa['key']}});}catch(_0x19352f){console[_0x59b44e(0xb0)](_0x19352f),_0xbb7a34(''+_0x19352f);}});
