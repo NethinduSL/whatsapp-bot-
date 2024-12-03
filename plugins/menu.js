@@ -55,7 +55,7 @@ cmd({
 ╭𝗖𝗼𝗻𝘃𝗲𝗿𝘁𝗲𝗿 𝗠𝗘𝗡𝗨 🧪
 │${menu.converter}
 ╰──────────────╯
-╭𝗙𝘂𝗻 𝗠𝗘𝗡𝗨😂
+╭𝗙𝘂𝗻 𝗠𝗘𝗡𝗨🫠
 │${menu.fun}
 ╰──────────────╯
 
@@ -63,7 +63,7 @@ cmd({
         `;
 
 
-await conn.sendMessage(from, {image: { url: "https://telegra.ph/file/6fd1c829a29ce3a8c6679.png" },caption: Elixamenu }, { quoted: mek });
+await conn.sendMessage(from, {image: { url: "https://raw.githubusercontent.com/Eboxsl/ELAUTO/refs/heads/main/Elixa/menu.png" },caption: Elixamenu }, { quoted: mek });
 
 
     } catch (e) {
