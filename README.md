@@ -1,6 +1,10 @@
 # Elix_MD
 https://telegra.ph/Elixa-08-23
 
+
+
+pai by -https://elixa-pair.vercel.app/
+
 Elixa MD is a powerful, customizable, and easy-to-use WhatsApp bot built using **Node.js** and the [Baileys](https://github.com/adiwajshing/Baileys) library. This bot is designed to provide automation and interactive features on WhatsApp with minimal setup.
 
 ---
