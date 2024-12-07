@@ -1,78 +1,18 @@
-const fs = require('fs');
-const path = require('path');
-const config = require('../config');
-const { cmd } = require('../command');
+//මේක බලල වැඩක් නෑ obsufucate  කරල තියෙනේ .
 
-// Auto Voice
-cmd({
-  on: 'body'
-},
-async (conn, mek, m, { from, body, isOwner }) => {
-  try {
-    const filePath = path.join(__dirname, '../Elixa/auto_voice.json');
-    if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      for (const text in data) {
-        if (body.toLowerCase() === text.toLowerCase() && config.AUTO_VOICE === 'true') {
-          await conn.sendPresenceUpdate('recording', from);
-          await conn.sendMessage(from, { 
-            audio: { url: data[text] }, 
-            mimetype: 'audio/mpeg', 
-            ptt: true 
-          }, { quoted: mek });
-        }
-      }
-    } else {
-      console.error(`Auto Voice file not found: ${filePath}`);
-    }
-  } catch (error) {
-    console.error(`Error in Auto Voice: ${error.message}`);
-  }
-});
 
-// Auto Sticker
-cmd({
-  on: 'body'
-},
-async (conn, mek, m, { from, body, isOwner }) => {
-  try {
-    const filePath = path.join(__dirname, '../Elixa/auto_sticker.json');
-    if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      for (const text in data) {
-        if (body.toLowerCase() === text.toLowerCase() && config.AUTO_STICKER === 'true') {
-          await conn.sendMessage(from, { 
-            sticker: { url: data[text] }, 
-            package: 'yourName' 
-          }, { quoted: mek });
-        }
-      }
-    } else {
-      console.error(`Auto Sticker file not found: ${filePath}`);
-    }
-  } catch (error) {
-    console.error(`Error in Auto Sticker: ${error.message}`);
-  }
-});
+//  ________  __    _                   ____    ____  ______   
+// |_   __  |[  |  (_)                 |_   \  /   _||_   _ `. 
+//   | |_ \_| | |  __   _   __  ,--.     |   \/   |    | | `. \
+//   |  _| _  | | [  | [ \ [  ]` _\ :    | |\  /| |    | |  | |
+//  _| |__/ | | |  | |  >    < // | |,  _| |_\/_| |_  _| |_.  /
+// |________|[___][___][__]`\_]\ -;__/ |_____||_____||______.  
+//All right resevd 🇱🇰
+//❤️ for al users
 
-// Auto Reply
-cmd({
-  on: 'body'
-},
-async (conn, mek, m, { from, body, isOwner }) => {
-  try {
-    const filePath = path.join(__dirname, '../Elixa/auto_reply.json');
-    if (fs.existsSync(filePath)) {
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      for (const text in data) {
-        if (body.toLowerCase() === text.toLowerCase() && config.AUTO_REPLY === 'true') {
-          await m.reply(data[text]);
-        }
-      }
-    } else {
-      console.error(`Auto Reply file not found: ${filePath}`);
-    }
-  } catch (error) {
-    console.error(`Error in Auto Reply: ${error.message}`);
-  }
-});
+
+
+
+function _0x3f13(){const _0x17a9b1=['HQqZd','uto_voice.','Error\x20in\x20A','2MvPEgh','EdHOR','3159765uKAwkM','7985100heEohc','join','found:\x20','hIcbT','utf8','\x20file\x20not\x20','22565qlLfid','AUTO_VOICE','IGJdN','3419640dywMrq','11FGRWyR','AUTO_REPLY','Auto\x20Reply','Auto\x20Voice','UMUNB','491863dKgXTl','recording','er\x20file\x20no','json','true','8fJtZrG','../config','path','wVUDb','MdRBV','uto\x20Reply:','audio/mpeg','VKniV','wOGBQ','readFileSy','tJDAV','error','3948623aEwdXk','qiLzn','nMpbR','reply','uto\x20Voice:','360iSkMtl','uto\x20Sticke','parse','t\x20found:\x20','message','PnpCq','lQjqS','../command','sOBrt','432SSJBBs','toLowerCas','sendMessag','r:\x20','ceUpdate','9303RgAXWE','uto_reply.','r.json','yourName','sendPresen','existsSync','uto_sticke','../Elixa/a','knibR','Auto\x20Stick','body','jyMGP','AUTO_STICK'];_0x3f13=function(){return _0x17a9b1;};return _0x3f13();}const _0x5de881=_0xda94;(function(_0x5a193f,_0x55728d){const _0x3a832e=_0xda94,_0x4e73a0=_0x5a193f();while(!![]){try{const _0x480578=parseInt(_0x3a832e(0xcb))/(-0x1540+0x6f*-0x37+0x2d1a)*(parseInt(_0x3a832e(0xff))/(0x1*-0x1625+-0x5d*-0x7+0x139c))+parseInt(_0x3a832e(0xef))/(-0x251*0xd+0x1*-0x933+0x1*0x2753)*(parseInt(_0x3a832e(0xea))/(0xd36+0x3*-0x6a+-0xbf4))+parseInt(_0x3a832e(0xc2))/(0x45*0x19+0x1*0x49d+-0xb55)*(-parseInt(_0x3a832e(0xe1))/(0xab9+0x106d+-0x1b20))+-parseInt(_0x3a832e(0xdc))/(0x1ee8+-0x190a*0x1+-0x5d7)*(-parseInt(_0x3a832e(0xd0))/(-0x2f9*0x1+0x1b5c+-0x185b))+parseInt(_0x3a832e(0x101))/(-0xd58*0x1+0x5*0x41f+0x172*-0x5)+-parseInt(_0x3a832e(0x102))/(0x204a+0x959*-0x4+0x524)+parseInt(_0x3a832e(0xc6))/(-0xbe9+0x369*-0x1+0xf5d)*(parseInt(_0x3a832e(0xc5))/(-0x1cb4+0x390*0x1+0x1930));if(_0x480578===_0x55728d)break;else _0x4e73a0['push'](_0x4e73a0['shift']());}catch(_0x557932){_0x4e73a0['push'](_0x4e73a0['shift']());}}}(_0x3f13,0x1a6db1+-0x17241d+0x1*0xb5325));const fs=require('fs'),path=require(_0x5de881(0xd2)),config=require(_0x5de881(0xd1)),{cmd}=require(_0x5de881(0xe8));function _0xda94(_0x1a1c74,_0x3bc747){const _0x4d17d3=_0x3f13();return _0xda94=function(_0x3319cb,_0x413829){_0x3319cb=_0x3319cb-(-0x77*-0xf+0x2433+-0x2a6d);let _0x2b90cc=_0x4d17d3[_0x3319cb];return _0x2b90cc;},_0xda94(_0x1a1c74,_0x3bc747);}cmd({'on':_0x5de881(0xf9)},async(_0x3f5383,_0x4207dc,_0xed63ff,{from:_0xfe57da,body:_0x3d9297,isOwner:_0x65d7f5})=>{const _0xf6c18d=_0x5de881,_0x18cced={'PnpCq':_0xf6c18d(0xf6)+_0xf6c18d(0xfd)+_0xf6c18d(0xce),'lQjqS':_0xf6c18d(0xc0),'UMUNB':function(_0x21418b,_0x1c1bd7){return _0x21418b===_0x1c1bd7;},'nMpbR':function(_0x874689,_0x30f425){return _0x874689===_0x30f425;},'knibR':_0xf6c18d(0xcf),'jyMGP':_0xf6c18d(0xcc),'VKniV':_0xf6c18d(0xd6)};try{const _0x41c7d6=path[_0xf6c18d(0x103)](__dirname,_0x18cced[_0xf6c18d(0xe6)]);if(fs[_0xf6c18d(0xf4)](_0x41c7d6)){const _0x39b5fc=JSON[_0xf6c18d(0xe3)](fs[_0xf6c18d(0xd9)+'nc'](_0x41c7d6,_0x18cced[_0xf6c18d(0xe7)]));for(const _0x4e5297 in _0x39b5fc){_0x18cced[_0xf6c18d(0xca)](_0x3d9297[_0xf6c18d(0xeb)+'e'](),_0x4e5297[_0xf6c18d(0xeb)+'e']())&&_0x18cced[_0xf6c18d(0xde)](config[_0xf6c18d(0xc3)],_0x18cced[_0xf6c18d(0xf7)])&&(await _0x3f5383[_0xf6c18d(0xf3)+_0xf6c18d(0xee)](_0x18cced[_0xf6c18d(0xfa)],_0xfe57da),await _0x3f5383[_0xf6c18d(0xec)+'e'](_0xfe57da,{'audio':{'url':_0x39b5fc[_0x4e5297]},'mimetype':_0x18cced[_0xf6c18d(0xd7)],'ptt':!![]},{'quoted':_0x4207dc}));}}else console[_0xf6c18d(0xdb)](_0xf6c18d(0xc9)+_0xf6c18d(0xc1)+_0xf6c18d(0x104)+_0x41c7d6);}catch(_0x17451e){console[_0xf6c18d(0xdb)](_0xf6c18d(0xfe)+_0xf6c18d(0xe0)+'\x20'+_0x17451e[_0xf6c18d(0xe5)]);}}),cmd({'on':_0x5de881(0xf9)},async(_0x3363dc,_0x48cca7,_0xd3077c,{from:_0x2dcb9a,body:_0x12d137,isOwner:_0x18844d})=>{const _0x48608e=_0x5de881,_0x290be5={'wOGBQ':_0x48608e(0xf6)+_0x48608e(0xf5)+_0x48608e(0xf1),'qiLzn':_0x48608e(0xc0),'hIcbT':function(_0x5a5fd9,_0xe5ad5){return _0x5a5fd9===_0xe5ad5;},'wVUDb':_0x48608e(0xcf),'MdRBV':_0x48608e(0xf2)};try{const _0x3627dc=path[_0x48608e(0x103)](__dirname,_0x290be5[_0x48608e(0xd8)]);if(fs[_0x48608e(0xf4)](_0x3627dc)){const _0x3ccb99=JSON[_0x48608e(0xe3)](fs[_0x48608e(0xd9)+'nc'](_0x3627dc,_0x290be5[_0x48608e(0xdd)]));for(const _0x4f4be5 in _0x3ccb99){_0x290be5[_0x48608e(0xbf)](_0x12d137[_0x48608e(0xeb)+'e'](),_0x4f4be5[_0x48608e(0xeb)+'e']())&&_0x290be5[_0x48608e(0xbf)](config[_0x48608e(0xfb)+'ER'],_0x290be5[_0x48608e(0xd3)])&&await _0x3363dc[_0x48608e(0xec)+'e'](_0x2dcb9a,{'sticker':{'url':_0x3ccb99[_0x4f4be5]},'package':_0x290be5[_0x48608e(0xd4)]},{'quoted':_0x48cca7});}}else console[_0x48608e(0xdb)](_0x48608e(0xf8)+_0x48608e(0xcd)+_0x48608e(0xe4)+_0x3627dc);}catch(_0x3446b5){console[_0x48608e(0xdb)](_0x48608e(0xfe)+_0x48608e(0xe2)+_0x48608e(0xed)+_0x3446b5[_0x48608e(0xe5)]);}}),cmd({'on':_0x5de881(0xf9)},async(_0x212174,_0x1ea47c,_0x2c5a94,{from:_0x52c77a,body:_0x3b1c3f,isOwner:_0x5b541c})=>{const _0x451374=_0x5de881,_0x4638e5={'IGJdN':_0x451374(0xf6)+_0x451374(0xf0)+_0x451374(0xce),'sOBrt':_0x451374(0xc0),'EdHOR':function(_0x147064,_0x5c3df7){return _0x147064===_0x5c3df7;},'tJDAV':function(_0x3c07f5,_0x30725f){return _0x3c07f5===_0x30725f;},'HQqZd':_0x451374(0xcf)};try{const _0x538d7e=path[_0x451374(0x103)](__dirname,_0x4638e5[_0x451374(0xc4)]);if(fs[_0x451374(0xf4)](_0x538d7e)){const _0x2a7ae1=JSON[_0x451374(0xe3)](fs[_0x451374(0xd9)+'nc'](_0x538d7e,_0x4638e5[_0x451374(0xe9)]));for(const _0x293f7d in _0x2a7ae1){_0x4638e5[_0x451374(0x100)](_0x3b1c3f[_0x451374(0xeb)+'e'](),_0x293f7d[_0x451374(0xeb)+'e']())&&_0x4638e5[_0x451374(0xda)](config[_0x451374(0xc7)],_0x4638e5[_0x451374(0xfc)])&&await _0x2c5a94[_0x451374(0xdf)](_0x2a7ae1[_0x293f7d]);}}else console[_0x451374(0xdb)](_0x451374(0xc8)+_0x451374(0xc1)+_0x451374(0x104)+_0x538d7e);}catch(_0x83f3d4){console[_0x451374(0xdb)](_0x451374(0xfe)+_0x451374(0xd5)+'\x20'+_0x83f3d4[_0x451374(0xe5)]);}});
+
+
